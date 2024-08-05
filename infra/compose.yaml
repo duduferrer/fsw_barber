@@ -1,0 +1,8 @@
+services:
+ database:
+  env_file: 
+   - '../.env'
+  image: 'postgres:16.3-alpine3.20'
+  container_name: 'fsw-barber-postgres'
+  ports:
+   - '5432:5432'
