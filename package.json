@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "WATCHPACK_POLLING=true next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker-up": "sudo docker compose --file infra/compose.yaml up -d"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
