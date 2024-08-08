@@ -33,20 +33,27 @@ const Home = () => {
           />
         </div>
         <div className="mt-2">
-          <h3>Agendamentos</h3>
+          <h3 className="px-2 pt-4 text-xs font-bold text-gray-400">
+            AGENDAMENTOS
+          </h3>
           <Card>
-            <CardContent>
-              <div className="flex flex-col gap-2 py-5 pt-2">
-                <Badge variant="secondary" className="w-fit">
+            <CardContent className="flex columns-2 justify-between p-0">
+              <div className="flex flex-col gap-2 p-6">
+                <Badge variant="default" className="w-fit">
                   Confirmado
                 </Badge>
                 <h4 className="font-semibold">Corte de Cabelo</h4>
                 <div className="flex items-center gap-2">
-                  <Avatar className="h-10 w-10">
+                  <Avatar className="h-6 w-6">
                     <AvatarImage src="https://s2-techtudo.glbimg.com/zAVzm6CbZ6VSmpDe76jhK7Qx73E=/0x0:1200x700/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/u/G/eQpsXGQB6xTlFlvJsUOw/avatar-a-lenda-de-aang.jpg" />
                   </Avatar>
                   <p className="text-sm">Barbearia do Zé</p>
                 </div>
+              </div>
+              <div className="flex flex-col items-center justify-center border-l-2 px-5">
+                <p className="text-sm">Fevereiro</p>
+                <p className="text-3xl font-semibold">06</p>
+                <p className="text-md">09:45</p>
               </div>
             </CardContent>
           </Card>
