@@ -4,10 +4,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { db } from '@/lib/prisma';
 import { SearchIcon } from 'lucide-react';
 import Image from 'next/image';
+import BarbershopCard from '@/components/barbershopCard';
 
-const Home = () => {
+const Home = async () => {
+  const barberShops = await db.barbershop.findMany();
+  console.log(barberShops);
   return (
     <>
       <Header />
@@ -57,6 +61,11 @@ const Home = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+        <div className="mt-6 flex gap-3 overflow-auto [&::-webkit-scrollbar]:hidden">
+          {barberShops.map((barbershop) => (
+            <BarbershopCard barberShop={barbershop} key={barbershop.id} />
+          ))}
         </div>
       </div>
     </>
